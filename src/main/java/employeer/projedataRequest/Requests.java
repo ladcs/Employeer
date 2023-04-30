@@ -39,8 +39,13 @@ public class Requests {
        this.mapAndInc.incRemuneration(10);
    }
    
+   /** requisito 3.5 agrupar em um map  função é lista de funcionario. */
+   public Map<String, List<String>> jobAndPeople() {
+	   return this.mapAndInc.getMapJobAndPeople();
+   }
+   
    /** requisito 3.8 map com as pessoas fazendo aniversário mes 10, outubro, e mes 12, dezembro. */
-   public Map<String, List<String>> toMap() {
+   public Map<String, List<String>> monthAndPeople() {
        this.utilPrint.getEmployeerInMonth(10);
        this.utilPrint.getEmployeerInMonth(12);
        return this.utilPrint.getPersonInMonth();

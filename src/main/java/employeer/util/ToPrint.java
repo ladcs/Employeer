@@ -51,7 +51,7 @@ public class ToPrint {
     }
     
     /** formata localDate para dd/MM/yyyy. */
-    public String setBirthdateDayMonthYear(LocalDate birthdateToString) {
+    public String birthdateDayMonthYear(LocalDate birthdateToString) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return birthdateToString.format(formatter);
       }
