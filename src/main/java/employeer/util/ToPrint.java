@@ -90,7 +90,7 @@ public class ToPrint {
     }
 	
 	/** retorna a os nomes dos employeers ordenado. */
-	public List<String> order(){
+	public List<String> sort(){
         List<Funcionario> tableEmployeersData = crud.getAllFunc();
         
         return tableEmployeersData.stream()
