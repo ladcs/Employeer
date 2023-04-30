@@ -9,8 +9,11 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import employeer.model.Funcionario;
-
+/** class EmployeerService, responsável por se comunicar com o banco a partir do Hibernate.
+ * infelizmente não sei testar essa parte.
+ */
 public class EmployeerService {
+	  /** método para deletar funcionário. */
 	  public List<Funcionario> deletePerson (String name) {
 		    
 		    EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql-employeers");
@@ -28,6 +31,7 @@ public class EmployeerService {
 		    
 		  }
 		  
+	      /** método para achar um funcionário no banco. */
 		  public Funcionario findByName(String name) {
 		    EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql-employeers");
 		    EntityManager em = emf.createEntityManager();
@@ -40,6 +44,7 @@ public class EmployeerService {
 		    return funcName;
 		  }
 		  
+		  /** método para retornar todos os funcionários. */
 		  public List<Funcionario> findAll() {
 		    EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql-employeers");
 		    EntityManager em = emf.createEntityManager();
@@ -51,6 +56,7 @@ public class EmployeerService {
 		    return allFunc;
 		  }
 		  
+		  /** método para atualizar um funcionário. */
 		  public List<Funcionario> updateRemuneration(Funcionario employeer, BigDecimal value) {
 		    EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql-employeers");
 		    EntityManager em = emf.createEntityManager();
