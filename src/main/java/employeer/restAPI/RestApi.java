@@ -24,7 +24,7 @@ import javax.ws.rs.core.Response;
 @Produces("application/json")
 public class RestApi {
 	
-	EmployeerService service;
+	final EmployeerService service;
 	
 	public RestApi() {
 		service = new EmployeerService();
