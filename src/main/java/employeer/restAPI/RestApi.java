@@ -19,17 +19,21 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
+/** class RestApi para acessar o banco. */
 @Controller
 @Path("/api/employeer")
 @Produces("application/json")
 public class RestApi {
 	
+	/** propriedade para criar um objeto da classe EmployeerService. */
 	final EmployeerService service;
 	
+	/** constructor cria o objeto classe EmployeerService. */
 	public RestApi() {
 		service = new EmployeerService();
 	}
 
+	/** endpoint para adicionar um funcionario no banco. */
     @POST
     @Consumes("application/json")
     public Response addOneEmployeer(Funcionario employeer) {
@@ -40,11 +44,27 @@ public class RestApi {
              .build();
     }
     
+    /** endpoint para buscar todos os funcionarios do banco. */
     @GET
     public List<Funcionario> getAllFunc() {
         return this.service.findAll();
     }
     
+    /** endpoint para buscar um o funcionário do banco pelo nome. */
+    @GET
+    @Consumes("application/json")
+    public Funcionario getByName(String name) {
+        return this.service.findByName(name);
+    }
+    
+    /** endpoint para buscar um o funcionário do banco pelo id. */
+    @GET
+    @Path("/{id}")
+    public Funcionario getByName(@PathParam("id") Long id) {
+        return this.service.findById(id);
+    }
+    
+    /** endpoint para editar a remuneração de um funcionario no banco. */
     @PUT
     @Path("/{id}")
     @Consumes("application/json")
@@ -53,6 +73,7 @@ public class RestApi {
         return this.service.updateRemuneration(employeer, newValue);
     }
     
+    /** endpoint para deletar um funcionario do bando. */
     @DELETE
     @Path("/{id}")
     public void delete(@PathParam("id") Long id) {
