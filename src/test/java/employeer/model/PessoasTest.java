@@ -1,4 +1,4 @@
-package employeer.service;
+package employeer.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -6,8 +6,6 @@ import java.time.LocalDate;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import employeer.model.Pessoas;
 
 public class PessoasTest {
 	@Test
