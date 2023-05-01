@@ -167,7 +167,7 @@ numberRemuneration recebe uma entidade Funcionario e um double min, returna um S
 </details>
 
 <details><summary><strong>projedataRequest</strong></summary><br/>
-<details><summary>class Table</details></summary>
+<details><summary>class Table</summary><br/>
 metodos: tableRows, titleTable, divTitleAndItens.
 
 tableRows retorna uma List de string que usa uma instancia de ToPrint e outra de RestApi para pegar todas as entidades de Funcionario da tabela e formatar então retorna cada entidade como um item da lista.
@@ -177,7 +177,7 @@ titleTable retorna a string formatada da seguinte maneira "%10s %20s %10s %20s \
 divTitleAndItens retorna "------------------------------------------------------------------\n".
 </details>
 
-<details><summary>class Prints</details></summary>
+<details><summary>class Prints</summary><br/>
 métodos: table, deleteJoao, jobAndNames, monthAndNames, oldestPerson, sortPeople, total, remunerations.
 
 table com uma instancia da classe table imprime divTitleAndItens, titleTable, divTitleAndItens por fim cada item retornado da tableRows.
@@ -195,7 +195,7 @@ total imprime o total a pagar com o formato "." em milhar e "," em decimal.
 remunerations imprime quantos salarios cara funcionario recebe onde o salário mínimo seja de 1212.00 no formato "nome recebe 1 salário." ou "nome recebe x salários.".
 </details>
 
-<details><summary>class Prints</details></summary>
+<details><summary>class Prints</summary>
 
 propriedades crud, instancia do RestApi, mapAndInc, instancia da MapAndIncRemunaration, e utilPrint, instancia de ToPrint.
 
