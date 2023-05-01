@@ -41,7 +41,9 @@ logback -> tirar os logs das dependêcias.
 Aqui é possível encontrar a classe App e a classe Seed, além dos outros pacotes.
 
 <details><summary>classe App</summary> <br/>
-Há quatro métodos, o principal, main com o retorno void, aqui cria-se um instancia da classe Seed e mostra todos os requisitos com espaço entre eles, para ir ao próximo deve haver um pressionamento da tecla enter.
+Propriedade crud, instancia de RestAPi.
+
+métodos: main, delay, jumpTenLines, next, requestProjedata, printOptions, optionsValue, addNew, delete, incRemuneration, mapJob, oldest, sort, allRemuneration e minRemuneration.
 
 Já o método delay imprime: "pressione enter para continuar" e faz o programa esperar essa ação.
 
@@ -49,6 +51,29 @@ Já o método delay imprime: "pressione enter para continuar" e faz o programa e
 Enquanto o método jumpTenLines imprime 10 linhas em branco para haver uma pequena separação entre os requisitos.
 
 Já o método next serve apenas para chamar os dois últimos métodos para serem usados na main.
+
+requestProjedata faz o que foi solicitado.
+
+printOptions mostra as opções que pode ser escolhido.
+
+optionsValue redireciona para fazer o que foi pedido e usa um método next.
+
+addNew adiciona um novo Funcionario.
+
+delete deleta um Funcionario.
+
+incRemuneration aumenta/diminui o salário de todos os Funcionario do banco de dados.
+
+mapJob mostra o map com as chaves e os nomes dos Funcionario.
+
+oldest mostra o Funcionario mais velho.
+
+sort mostra os nomes dos Funcionario ordenado.
+
+allRemuneration mostra a soma de todos os salários.
+
+minRemuneration mostra o nome e quantos salários mínimos cada um recebe.
+
 </details>
 
 <details><summary>classe Seed</summary> <br />
