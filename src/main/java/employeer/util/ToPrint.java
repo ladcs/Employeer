@@ -62,7 +62,10 @@ public class ToPrint {
 	}
 
     /** adiciona o mês como chave e as pessoas nascida nesse mês no map personInMonth. */
-	public void getEmployeerInMonth(int month) {
+	public void setEmployeerInMonth(int month) {
+		if(month < 12 || month > 1 ) {
+			throw new IllegalArgumentException("Mês deve estar entre 1 e 12.");
+		}
     	List<Funcionario> tableEmployeersData = crud.getAllFunc();
     	
         List<String> employeersName = tableEmployeersData.stream()

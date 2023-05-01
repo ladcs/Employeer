@@ -46,8 +46,8 @@ public class Requests {
    
    /** requisito 3.8 map com as pessoas fazendo aniversário mes 10, outubro, e mes 12, dezembro. */
    public Map<String, List<String>> monthAndPeople() {
-       this.utilPrint.getEmployeerInMonth(10);
-       this.utilPrint.getEmployeerInMonth(12);
+       this.utilPrint.setEmployeerInMonth(10);
+       this.utilPrint.setEmployeerInMonth(12);
        return this.utilPrint.getPersonInMonth();
    }
    

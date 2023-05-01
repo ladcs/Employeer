@@ -2,7 +2,7 @@ package employeer.projedataRequest;
 
 /** class para imprimir as requisições. */
 public class Prints {
-    /** conexão com requests. */
+    /** instancia com requests. */
     final Requests req;
     
     /** constructor. */

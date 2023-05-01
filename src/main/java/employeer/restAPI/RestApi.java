@@ -52,15 +52,16 @@ public class RestApi {
     
     /** endpoint para buscar um o funcionário do banco pelo nome. */
     @GET
+    @Path("/{name}")
     @Consumes("application/json")
-    public Funcionario getByName(String name) {
+    public Funcionario getByName(@PathParam("name") String name) {
         return this.service.findByName(name);
     }
     
     /** endpoint para buscar um o funcionário do banco pelo id. */
     @GET
     @Path("/{id}")
-    public Funcionario getByName(@PathParam("id") Long id) {
+    public Funcionario getById(@PathParam("id") Long id) {
         return this.service.findById(id);
     }
     

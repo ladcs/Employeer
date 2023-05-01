@@ -13,7 +13,7 @@ public class Pessoas {
 	/** criando coluna name, referente ao nome. */
 	private String name;
 	
-	/** criando coluna birthDate, referente a data de nascimento. */
+	/** criando coluna birthdate, referente a data de nascimento. */
 	private LocalDate birthDate;
 	
 	/** getters e setters das colunas. */

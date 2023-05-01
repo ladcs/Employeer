@@ -25,6 +25,19 @@ public class EmployeerService {
         return employeer;
 	}
 	
+	/** método para achar um funcionário no banco. */
+    public Funcionario findByName(String name) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql-employeers");
+        EntityManager em = emf.createEntityManager();
+		    
+        TypedQuery<Funcionario> query = em.createQuery("SELECT f FROM Funcionario f WHERE f.name = :name", Funcionario.class);
+        query.setParameter("name", name);
+        Funcionario funcName = query.getSingleResult();
+        em.close();
+		    
+        return funcName;
+    }
+	
 	/** método para criar funcionário. */
 	public Funcionario insertOne (Funcionario employeer) {
 		
@@ -38,23 +51,9 @@ public class EmployeerService {
         
         return this.findByName(employeer.getName());
 	}
-	
-	/** método para achar um funcionário no banco. */
-    public Funcionario findByName(String name) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql-employeers");
-        EntityManager em = emf.createEntityManager();
-		    
-        TypedQuery<Funcionario> query = em.createQuery("SELECT f FROM Funcionario f WHERE f.name = :name", Funcionario.class);
-        query.setParameter("name", name);
-        Funcionario funcName = query.getSingleResult();
-        em.close();
-		    
-        return funcName;
-    }
-	  
 		
     /** método para deletar funcionário. */
-    public List<Funcionario> deletePerson (String name) {
+    public void deletePerson (String name) {
 		    
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql-employeers");
         EntityManager em = emf.createEntityManager();
@@ -65,10 +64,7 @@ public class EmployeerService {
         em.remove(entityToDelete);
         em.getTransaction().commit();
 		    
-        em.close();
-		    
-        return this.findAll();
-		    
+        em.close();		    
     }
     
     /** método para retornar todos os funcionários. */
